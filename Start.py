@@ -22,12 +22,14 @@ def anime_text(text, delay=0.03):
 
 def banner():    
     os.system("clear")    
-    anime_text("█████  █     █ █████  █     █ █████", 0.002)  
-    anime_text("█      █     █ █      █ █   █ █", 0.002)  
-    anime_text("█████  █████ █ █████  █   █  █████", 0.002)  
-    anime_text("    █  █     █ █      █ █   █     █", 0.002)  
-    anime_text("█████  █     █ █████  █     █ █████", 0.002)  
-    anime_text("           ✦ BLACK TOOL ✦", 0.05)  
+    print(Fore.RED)
+    anime_text("██████╗ ██╗      █████╗  ██████╗██╗  ██╗", 0.002)
+    anime_text("██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝", 0.002)
+    anime_text("██████╔╝██║     ███████║██║     █████╔╝ ", 0.002)
+    anime_text("██╔══██╗██║     ██╔══██║██║     ██╔═██╗ ", 0.002)
+    anime_text("██████╔╝███████╗██║  ██║╚██████╗██║  ██╗", 0.002)
+    anime_text("╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝", 0.002)
+    anime_text("            ✦ BLACK TOOL ✦", 0.05)  
 
 def clean(s):    
     return re.sub(r"[\u00A0\x00-\x1F\x7F-\x9F]", " ", s).strip()    
@@ -91,7 +93,7 @@ try:
             try:    
                 r = requests.patch(url_name, headers=hdr, json={"name": nm}, timeout=10)    
                 if r.status_code == 200:    
-                    anime_text("[+] تم التغيير إلى: " + nm)    
+                    anime_text("[+] تم التغيير إلى اسم جديد")    
                 elif r.status_code == 401:    
                     anime_text("[!] فشل العملية: التوكن غير صالح (401)")    
                     break    
@@ -107,7 +109,7 @@ try:
             try:    
                 r = requests.post(url_msg, headers=hdr, json={"content": msg}, timeout=10)    
                 if r.status_code == 200:    
-                    anime_text("[+] تم الإرسال: " + msg)    
+                    anime_text("[+] تم إرسال رسالة")    
                 elif r.status_code == 401:    
                     anime_text("[!] فشل العملية: التوكن غير صالح (401)")    
                     break    
